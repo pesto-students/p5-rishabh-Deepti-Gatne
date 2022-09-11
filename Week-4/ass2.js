@@ -1,16 +1,24 @@
-let person = {
-    name: "abc",
-    dname:  (name1)=> {
-        return  name1;
-    }
-};
 
-let teacher = Object.create(person);
-
-teacher.teach =  (subject) =>{
-        return  subject;
+function Person(name){
+    this.name=name;
 }
 
+Person.prototype.printname=function()
+{
+    return(this.name);
 
-console.log(teacher.dname("Deepti") +" is now teahing "+ teacher.teach("TOC"));
+}
 
+function Teacher(name,subject)
+{
+    Person.call(this,name);
+    this.subject=subject;
+}
+Object.setPrototypeOf(Teacher.prototype,Person.prototype);
+
+Teacher.prototype.printsub=function(){
+    console.log(this.printname() + " is now teaching " +this.subject);
+}
+const t=new Teacher("Deepti","TOC");
+
+t.printsub();
