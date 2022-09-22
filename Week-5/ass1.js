@@ -8,9 +8,9 @@ function* range(upperbound) {
 
   function mult(i) { 
     return new Promise(resolve => {
-      setTimeout(() => {
+      setTimeout((i) => {
         resolve(i*i);
-      }, 5000);
+      }, 1000*i,i);
     });
   }
 
@@ -21,6 +21,6 @@ async function square(n) {
   }
   
  
-for(const r of range(20)){
+for(const r of range(10)){
     
 }
