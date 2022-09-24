@@ -1,0 +1,26 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.all-col {
+  float:left;
+  width:33.33%;
+  padding: 13px;
+  min-height: 350px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.all-row::after{
+  content: "";
+  display:table;
+  clear:both;
+}
+
+
+@media  screen and (max-width: 768px){
+  .all-col {
+    width:100%;
+  } 
+}
